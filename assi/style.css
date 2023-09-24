@@ -1,0 +1,20 @@
+.sanpham>.nav-item>.active{
+    color:blue;
+}
+@media (min-width: 1280px) {
+    #contact {
+      display: flex !important;
+    }
+  }
+#sach:hover{
+    border: 1px solid black;
+}
+#anhchuyen:hover{
+  border: 1px solid black;
+ 
+}
+
+ngb-rating{
+  color: black;
+  font-size: 10px;
+}

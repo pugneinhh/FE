@@ -1,0 +1,62 @@
+<div class="container form-group">
+    <form class=" row needs-validation" ng-submit="addSP()">
+        <div class=" col-md-8 mt-5 mb-3">
+            <div class="has-validation">
+            <label for="validationServer01" class="form-label fs-1 fw-bolder">Tên</label>
+            
+                <input type="text" ng-model="product.name" class="form-control form-control-lg fs-3 "
+                     id="validationServer01" placeholder="Tên sản phẩm"
+                    required>
+                <div class="invalid-feedback fs-4 mt-2 mb-3">
+                    Không được để trống dữ liệu
+                </div>
+                <div class="valid-feedback fs-4 mt-2 mb-3">
+                    Hợp lệ
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-8 mb-3 mt-2">
+            <label for="validationServer02" class="form-label fs-1 fw-bolder">Ảnh</label>
+                <input type="text" ng-model="images"
+                    class="form-control form-control-lg fs-3  mt-5 "
+                    aria-describedby="validationServer02Feedback" id="validationServer02" placeholder="Hình ảnh"
+                    required>
+                    <div id="validationServer02Feedback" class="invalid-feedback fs-4">
+                        Không được để trống dữ liệu
+                    </div>
+                    <div class="valid-feedback fs-4">
+                        Hợp lệ
+                    </div>
+
+        </div>
+        <div class="col-md-2">
+            <img class="w-100 ms-5 "  src="{{product.images[0]}}" alt="">
+        </div>
+        <div class=" col-md-8 mb-3 mt-2">
+            <label for="validationServer03" class="form-label fs-1 fw-bolder">Mô tả</label>
+            <textarea ng-model="product.description" class="form-control form-control-lg fs-3"  aria-describedby="validationServer03Feedback" id="validationServer03" style="height:200px ;"
+                id="exampleFormControlTextarea1" rows="3" required></textarea>
+                <div id="validationServer03Feedback" class="invalid-feedback fs-4">
+                    Không được để trống dữ liệu
+                </div>
+                <div class="valid-feedback fs-4">
+                    Hợp lệ
+                </div>
+        </div>
+        <div class=" col-md-8 mb-3 mt-2">
+            <label for="validationServer04" class="form-label fs-1 fw-bolder">Gía</label>
+            <input type="number" min="0" class="form-control form-control-lg fs-3" id="exampleFormControlInput1" aria-describedby="validationServer04Feedback" id="validationServer04" placeholder="0"
+                ng-model="product.original_price" ng-change="thayGia(product.original_price)" required>
+                <div id="validationServer04Feedback" class="invalid-feedback fs-4">
+                    Không được để trống dữ liệu
+                </div>
+                <div class="valid-feedback fs-4">
+                    Hợp lệ
+                </div>
+        </div>
+        <div class="mt-5">
+            <button class="btn btn-outline-success fs-2 me-3" type="submit" >Thêm</button>
+            <button class="btn btn-outline-danger fs-2" ng-click="huy()">Hủy</button>
+        </div>
+    </form>
+</div>

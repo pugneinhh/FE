@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- <head> -->
+<!-- Required meta tags -->
+<!-- <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+
+<!-- Bootstrap CSS -->
+<!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+<!-- <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
+<!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+<!-- https://cdnjs.com/libraries/font-awesome -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" /> -->
+<!-- <script src="angular.min.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />
+  <script type="module" src="app.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Hello, world!</title> -->
+<!-- </head> -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script type="module" src="./app.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Home</title>
+  <!-- <script src="./angular.min.js"></script> -->
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+
+  <nav class="navbar navbar-expand-lg bg-primary ">
+    <div class="container col-md-8">
+      <a href="#/" class=" me-5 ">
+        <img src="images/logo.png" alt="Logo" class="d-block align-text-top" />
+        <img src="images/Rectangle.png" alt="" class="d-block align-text-bottom" />
+      </a>
+      <!-- form -->
+      <form class="d-flex flex-grow-1 ms-5  " role="search">
+        <input class="form-control fs-3 me-1 collapse navbar-collapse " id="Markup" type="search" ng-model="tim" placeholder="Tìm kiếm"
+          aria-label="Search" />
+        <button class="btn text-white fs-3 ps-5 pe-5 text-nowrap collapse navbar-collapse " id="Markup" width="120px"
+          style="background-color: #0d5cb6" ng-click="searchPro(tim)" type="submit">
+          <span> <img src="images/search.png" alt="" /></span> Tìm kiếm
+        </button>
+      </form>
+      <button class="navbar-toggler border-0 text-white " type="button" data-bs-toggle="collapse"
+        data-bs-target="#Markup" aria-controls="Markup" aria-expanded="false">
+        <img src="images/search.png" width="40" height="40" alt="" />
+      </button>
+      
+      <!-- taikhoan mk -->
+
+      <button class="btn btn-outline-dark border border-0 anh" aria-controls="navbarNavAltMarkup"
+        data-bs-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" data-bs-target="#hehe"><img
+          src="images/user.png" alt=""> </button>
+      <div>
+        <div class="  me-0" id="navbarToggleExternalContent">
+          <div class="d-inline">
+            <a class="fs-4 text-white collapse navbar-collapse text-nowrap" href="">Đăng nhập/Đăng ký</a>
+          </div>
+          <div class="dropdown collapse navbar-collapse">
+            <button class="btn text-white dropdown-toggle fs-4" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Tài khoản
+            </button>
+          
+          <ul class="dropdown-menu " style="margin-top: 120px; ">
+            <li><a class="dropdown-item fs-5" href="#/admin">Quản trị sản phẩm</a></li>
+            <li>
+              <a class="dropdown-item fs-5" href="#">Quên mật khẩu</a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+      <!-- giỏ hàng -->
+
+      <div class="ms-2 d-flex col-lg-2">
+        <a type="button" href="#/giohang" class="btn btn-primary position-relative">
+          <img src="images/giohang.png" alt="">
+          <span class="position-absolute fs-6 top-0 start-300 translate-middle badge rounded-pill bg-warning">
+            {{slgh}}
+          </span>
+        </a>
+        <a href="#/giohang" class="text-white collapse navbar-collapse  mt-4 text-nowrap ms-1"
+          style="text-decoration: none;">Giỏ
+          hàng</a>
+      </div>
+    </div>
+    <div class="collapse  justify-content-end" id="hehe">
+      <div class="navbar-nav">
+        <a class="nav-link active text-white" aria-current="page" href="#pro">Đăng nhập</a>
+        <a class="nav-link text-white" href="#about mt-2">Đăng ký </a>
+        <a class="nav-link text-white" href="#contac">Quên mk</a>
+      </div>
+    </div>
+
+  </nav>
+  <marquee class="bg-warning fw-bolder fs-3 p-2 " direction="right">
+
+   <span class="fw-bold fs-2 text-uppercase text-primary fst-italic">Freeship</span>   mỗi ngày, áp dụng tự động không cần săn mã <span class="text-white">></span>
+    
+    </marquee>
+  <!-- content -->
+  <ng-view></ng-view>
+      <!-- Kết -->
+      
+    <div class="container mb-3" style="margin-top: 300px;">
+      <div class="row">
+        <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto fs-5 ">
+          <h4 class="fw-bolder">Hỗ trợ khách hàng</h4>
+          <p>Hotline:1900-6035</p>
+          <p>(1000 đ/phút, 8-21h kể cả T7, CN)</p>
+          <p>Các câu hỏi thường gặp</p>
+          <p>Gửi yêu cầu hỗ trợ</p>
+          <p>Hướng dẫn đặt hàng</p>
+          <p>Phương thức vận chuyển</p>
+          <p>Chính sách đổi trả</p>
+          <p>Hướng dẫn trả góp</p>
+          <p>Chính sách hàng nhập khẩu</p>
+          <p>Hỗ trợ khách hàng:hotro@tiki.vn</p>
+          <p>Báo lỗi bảo mật:security@tiki.vn</p>
+        </div>
+        <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto fs-5">
+          <h4 class="fw-bolder mb-3">Về Tiki</h4>
+          <p>Giới thiệu Tiki</p>
+          <p>Tuyển dụng</p>
+          <p>Chính sách bảo mật thanh toán</p>
+          <p>Chính sách bảo mật thông tin cá nhân</p>
+          <p>Chính sách giải quyết khiếu nại</p>
+          <p>Điều khoản sử dụng</p>
+          <p>Giới thiệu Tiki Xu</p>
+          <p>Tiếp thị liên kết cùng Tiki</p>
+          <p>Bán hàng doanh nghiệp</p>
+          <p>Điều kiện vận chuyển</p>
+        </div>
+        <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto fs-5 ">
+          <h4 class="fw-bolder mb-3">Hợp tác và liên kết</h4>
+          <p>Quy chế hoạt động Sàn GDTMĐT</p>
+          <p>Bán hàng cùng Tiki</p>
+          <div class="mt-5">
+            <h3 class="fw-bolder mb-3">Chứng nhận bởi</h3>
+            <div>
+              <img src="images/van.png" class="w-full" alt="">
+              <img src="images/dky.png" class="w-full" alt="">
+            </div>
+          </div>
+        </div>
+        <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto fs-5 ">
+          <h4 class="fw-bolder mb-3">Phương thức thanh toán</h4>
+          <div class="p-3">
+            <img src="images/Frame.png" alt="">
+            <img src="images/Frame-1.png" alt="">
+            <img src="images/Frame-2.png" alt="">
+            <img src="images/Frame-3.png" alt="">
+            <img src="images/Frame-4.png" alt="">
+          </div>
+          <div class="p-3">
+            <img src="images/Frame-5.png" alt="">
+            <img src="images/Frame-6.png" alt="">
+            <img src="images/Frame-7.png" alt="">
+            <img src="images/Frame-8.png" alt="">
+            <img src="images/Frame-9.png" alt="">
+          </div>
+          <div class="p-3">
+            <img src="images/Frame-10.png" alt="">
+            <img src="images/Frame-11.png" alt="">
+          </div>
+          <div class="mt-5">
+            <h4 class="fw-bolder mb-4">Dịch vụ giao hàng</h4>
+            <div>
+              <img src="images/giaohang.png" class="w-full h-100" alt="">
+
+            </div>
+          </div>
+        </div>
+        <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto fs-5 ">
+          <h3 class="fw-bolder mb-4">r</h3>
+          <div>
+            <img src="images/fb.png" class="w-full" alt="">
+            <img src="images/yt.png" class="w-full ms-2" alt="">
+            <img src="images/zalo.png" class="w-full ms-2" alt="">
+          </div>
+          <div>
+            <h4 class="fw-bolder mt-4 mb-4">Tải ứng dụng trên điện thoại</h4>
+            <div class="" id="contact">
+              <div class="col-md-5 mx-2 mb-2">
+                <img src="images/qr.png" alt="" />
+              </div>
+              <div class="col-md-7 mx-2">
+                <div class="tren">
+                  <img src="images/as.png" alt="" />
+                </div>
+                <div class="duoi mt-2">
+                  <img src="images/gp.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class=" container pt-3" style="border-top: rgb(183, 183, 183) solid 1px;">
+      <p>Trụ sở chính: Tòa nhà Viettel, Số 285, đường Cách Mạng Tháng 8, phường 12, quận 10, Thành phố Hồ Chí Minh</p>
+      <p>Tiki nhận đặt hàng trực tuyến và giao hàng tận nơi, chưa hỗ trợ mua và nhận hàng trực tiếp tại văn phòng hoặc
+        trung tâm xử lý đơn hàng</p>
+      <p>Giấy chứng nhận Đăng ký Kinh doanh số 0309532909 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp lần đầu
+        ngày 06/01/2010 và sửa đổi lần thứ 23 ngày 14/02/2022</p>
+      <p>© 2022 - Bản quyền của Công ty TNHH Ti Ki</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+
+    <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+</body>
+
+</html>

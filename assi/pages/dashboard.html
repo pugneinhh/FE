@@ -1,0 +1,31 @@
+<div class="container">
+    <h1 class="fs-1 fw-bolder text-capitalize mt-5">Quản trị sản phẩm</h1>
+    <a class="btn btn-outline-primary fs-4 float-end text-decoration-none mb-5" href="#/themSP">Thêm mới sản phẩm</a>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th class="text-center fs-2" scope="col">STT</th>
+                <th  class="text-center fs-2" scope="col">Tên</th>
+                <th  class="text-center fs-2" scope="col">Ảnh</th>
+                <th  class="text-center fs-2" scope="col">Mô tả</th>
+                <th  class="text-center fs-2" scope="col">Giá</th>
+                <th  class="text-center fs-2" scope="col">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="book in books">
+                <th  class="text-center fs-3 align-middle" width="5%" width="10%" scope="row">{{$index+1}}</th>
+                <td class="fw-bolder fs-3 align-middle" width="20%">{{book.name}}</td>
+                <td width="20%">
+                    <img class="w-100 " style="height: 200px;" src="{{ book.images[0]}}" alt="">
+                </td>
+                <td class="fs-3 align-middle" width="30%">{{book.short_description }}</td>
+                <td class="text-center fs-3 fw-bolder align-middle" width="10%">{{book.original_price}}</td>
+                <td class="text-center align-middle">
+                    <a class="btn btn-outline-danger text-decoration-none fs-4" ng-click="layID(book.id)" href="#/suaSP/{{book.id}}">Sửa</a>
+                    <button class="btn btn-outline-danger fs-4" ng-click="delete(book.id)">Xoá</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

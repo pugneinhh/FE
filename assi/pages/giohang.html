@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="display-1 fw-bolder text-capitalize mt-5">Giỏ hàng của Phanh</h1>
+   
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-center fs-2" scope="col">STT</th>
+                <th  class="text-center fs-2" scope="col">Tên</th>
+                <th  class="text-center fs-2" scope="col">Ảnh</th>
+                <th  class="text-center fs-2" scope="col">Giá</th>
+                <th  class="text-center fs-2" scope="col">Số lượng</th>
+                <th class="text-center fs-2" scope="col">Thành tiền</th>
+                <th  class="text-center fs-2" scope="col">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in cart">
+                <th  class="text-center fs-3 align-middle" width="5%"  scope="row">{{$index+1}}</th>
+                <td class="fw-bolder fs-3 align-middle" width="20%">{{item.ten}}</td>
+                <td width="20%">
+                    <img class="w-100 " style="height: 200px;" src="{{item.anh}}" alt="">
+                </td>
+                <td class="text-center fs-3 fw-bolder align-middle" width="10%">{{item.gia| currency:"" : 0}}</td>
+                <td class="text-center fs-3 fw-bolder align-middle" width="10%"><input type="number" class="text-center" style="width: 50px;" ng-change="updateSL(item)" ng-model="item.soluong" ></td>
+                <td class="text-center fs-3 fw-bolder align-middle" width="15%">{{item.thanhtien| currency:"" : 0}}</td>
+                <td class="text-center align-middle">               
+                    <button class="btn btn-outline-danger fs-4" ng-click="deleteSP(item.id)">Xoá</button>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="5" class="text-end fs-2">Tổng tiền</th>
+                <th class="text-center fs-2 text-danger">{{tt | currency:"" : 0}}</th>
+                <th></th>
+            </tr>
+            <tr><td colspan="7" class=" text-center border border-0 pt-5"><button class="btn btn-outline-secondary fs-2" ng-click="muaTiep()">Mua tiếp</button></td> </tr>
+        </tbody>
+    </table>
+    
+</div>

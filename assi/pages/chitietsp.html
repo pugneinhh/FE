@@ -1,0 +1,92 @@
+<div class="container mt-5 mb-5">
+  <div class="row g-0">
+    <div class="col-sm-12 col-md-12 col-lg-4">
+      <div class="row">
+        <img src="{{thayanh}}" class="w-100 " alt="">
+      </div>
+      <div class="row row-cols-5 chuyenanh mt-1 d-flex"   > 
+        
+          <a class="d-flex " style="cursor: pointer;" ><img src="{{img}}" id="anhchuyen" class="w-100" ng-mouseover="layAnh($index)" ng-repeat="img in product.images track by $index" alt=""> </a>  
+            
+          
+      </div>
+    </div> 
+    
+    <div class="col-sm-12 col-md-12 col-lg-8">
+      <div class="card-body mb-5">
+        <h1 class=" card-title display-5">{{product.name}}</h1>
+        <div class="card-text d-flex">
+          <ul class="sart list-unstyled  ">
+            <li class="d-inline-block"><i class="fas fa-star"></i></li>
+            <li class="d-inline-block"><i class="fas fa-star"></i></li>
+            <li class="d-inline-block"><i class="fas fa-star"></i></li>
+            <li class="d-inline-block"><i class="fas fa-star"></i></li>
+            <li class="d-inline-block"><i class="fas fa-star"></i></li>
+          </ul>
+          <p class="fw-light ">&nbsp; &nbsp; &nbsp;(Xem 2942 đánh giá)</p>
+          <p class="fw-light ">&nbsp; &nbsp; &nbsp;| {{product.quantity_sold.text}}</p>
+        </div>
+        <div class="card-text d-flex">
+          <div class=" text-danger display-4 "> {{product.original_price | currency :"" : 0}}</div>
+          <!-- <p class="text-bg-light pt-4">&nbsp; &nbsp;109.000 ₫ &nbsp;</p>
+          <p class="text-danger pt-4 text-center">&nbsp; <span class="border border-danger p-2 rounded-3">-23%</span> -->
+          </p>
+        </div>
+      </div>
+      <div class="card-body border border-start-0 border-bottom-0 border-end-0 mt-5 pt-5">
+        <div class=" fs-1 mt-5 mb-3"> Số lượng</div>
+        <div class="btn-group " role="group" aria-label="Basic mixed styles example">
+          <button type="button" class="btn btn-outline-danger" ng-click="down()"><span
+              class=" text-center text-dark fs-1"> -</span></button>
+          <input type="text" class=" text-center fs-1" ng-model="quantity" style="width: 70px;">
+          <button type="button" class="btn btn-outline-success  text-dark fs-1 " ng-click="up()">+</button>
+        </div>
+        <div class="row mt-4 ms-2">
+          <button class="btn btn-danger text-center col-3 rounded-3 fs-2" style="margin-top: 10px; height: 50px;" ng-click="addGH(product)">Chọn
+            mua</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sản phẩm khác  -->
+<div class="container mt-5 pt-5">
+  <h2 class="text-capitalize">Sản phẩm tương tự</h2>
+  <div class="row row-cols-6">
+    <div class="col-sm-12 col-md-4 col-lg-2col-sm-12 col-md-4 col-lg-2" id="sach" ng-repeat="product in books | limitTo:6:0">
+      <a href="#chitietsp/{{product.id}}" style="text-decoration: none;">
+        <div class="card border-0">
+          <img src="{{product.images[0]}}" class="card-img-top" alt="...">
+          <div class="card-body pt-5 ps-0">
+            <h5 class="card-title fw-bolder mb-3 " style="font-size: 15px;">{{product.name}}</h5>
+            <div class="card-text d-flex">
+              <span ng-bind-html="renderRating(product.rating_average)|unsafe "></span>
+              | <span ng-if="product.quantity_sold.text != null" class="fw-light "
+                  style="font-size: 10px;">{{product.quantity_sold.text}}</span>
+                  <span ng-if="product.quantity_sold.text==null" class="fw-light " style="font-size: 10px;">Chưa bán</span>
+            </div>
+            <p class="card-text text-danger fw-bold mt-3"> {{product.original_price | currency :"" : 0}} ₫
+              <span class="fw-medium "
+                style="border: 1px solid red; border-radius: 3px; font-size: 10px;padding: 0 5px">-32%</span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- Mô tả sản phẩm -->
+<div class="container mt-5 pt-5" id="mota">
+  <h1>Mô Tả Sản Phẩm</h1>
+  <div class="collapse show" data-bs-parent="#mota" id="short">
+  <p ng-bind-html="product.short_description | unsafe" class="fs-3"></p>
+  <button class="btn btn-outline-primary fs-2  col-3 offset-4 mt-4 h-25" data-bs-toggle="collapse" href="#long">Xem Thêm Nội
+    Dung</button>
+  </div>
+  <div class="collapse" data-bs-parent="#mota" id="long">
+    <p ng-bind-html="product.description | unsafe" class="fs-3"></p>
+  <button class="btn btn-outline-primary fs-2  col-3 offset-4 mt-4 h-25" data-bs-toggle="collapse" href="#short"> Ẩn Bớt Nội
+    Dung</button>
+  </div>
+  </div>
+</div>

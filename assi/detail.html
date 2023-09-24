@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- <head> -->
+<!-- Required meta tags -->
+<!-- <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+
+<!-- Bootstrap CSS -->
+<!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+<!-- <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
+<!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+<!-- https://cdnjs.com/libraries/font-awesome -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" /> -->
+<!-- <script src="angular.min.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />
+  <script type="module" src="app.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Hello, world!</title> -->
+<!-- </head> -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detail</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script type="module" src="./app.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script src="./angular.min.js"></script> -->
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+
+  <nav class="navbar navbar-expand-lg bg-primary ">
+    <div class="container col-md-8">
+      <a href="#!/home" class=" me-5 ">
+        <img src="images/logo.png" alt="Logo" class="d-block align-text-top" />
+        <img src="images/Rectangle.png" alt="" class="d-block align-text-bottom" />
+      </a>
+      <!-- form -->
+      <form class="d-flex flex-grow-1 ms-5  " role="search">
+        <input class="form-control fs-3 me-1 collapse navbar-collapse " id="Markup" type="search" placeholder="Tìm kiếm"
+          aria-label="Search" />
+        <button class="btn text-white fs-3 ps-5 pe-5 text-nowrap collapse navbar-collapse " id="Markup" width="120px"
+          style="background-color: #0d5cb6" type="submit">
+          <span> <img src="images/search.png" alt="" /></span> Tìm kiếm
+        </button>
+      </form>
+      <button class="navbar-toggler border-0 text-white " type="button" data-bs-toggle="collapse"
+        data-bs-target="#Markup" aria-controls="Markup" aria-expanded="false">
+        <img src="images/search.png" width="40" height="40" alt="" />
+      </button>
+      <!-- taikhoan mk -->
+
+      <button class="btn btn-outline-dark border border-0 anh" aria-controls="navbarNavAltMarkup"
+        data-bs-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" data-bs-target="#hehe"><img
+          src="images/user.png" alt=""> </button>
+      <div>
+        <div class="  me-0" id="navbarToggleExternalContent">
+          <div class="d-inline">
+            <a class="fs-4 text-white collapse navbar-collapse text-nowrap" href="">Đăng nhập/Đăng ký</a>
+          </div>
+          <div class="dropdown collapse navbar-collapse">
+            <button class="btn text-white dropdown-toggle fs-4" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Tài khoản
+            </button>
+          
+          <ul class="dropdown-menu " style="margin-top: 120px; ">
+            <li><a class="dropdown-item fs-5" href="#">Đăng nhập</a></li>
+            <li><a class="dropdown-item fs-5" href="#">Đăng ký</a></li>
+            <li>
+              <a class="dropdown-item fs-5" href="#">Quên mật khẩu</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <!-- giỏ hàng -->
+
+      <div class="ms-2 d-flex col-lg-2">
+        <button type="button" class="btn btn-primary position-relative">
+          <img src="images/giohang.png" alt="" />
+          <span class="position-absolute fs-6 top-0 start-300 translate-middle badge rounded-pill bg-warning">
+            0
+          </span>
+        </button>
+        <a href="#" class="text-white collapse navbar-collapse  mt-4 text-nowrap ms-1"
+          style="text-decoration: none;">Giỏ
+          hàng</a>
+      </div>
+    </div>
+    <div class="collapse  justify-content-end" id="hehe">
+      <div class="navbar-nav">
+        <a class="nav-link active text-white" aria-current="page" href="#pro">Đăng nhập</a>
+        <a class="nav-link text-white" href="#abo mt-2ut">Đăng ký </a>
+        <a class="nav-link text-white" href="#contac">Quên mk</a>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- content -->
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-4">
+        <img src="images/kiluat.png" class="w-100 " alt="">
+        <div class="row chuyenanh">
+          <div class="col-sm-2 col-md-2 col-lg-2 ">
+            <img src="images/kiluat1.png" class="w-100" alt="">
+          </div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="images/kiluat2.png" class="w-100" alt="">
+          </div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="images/kiluat3.png" class="w-100" alt="">
+          </div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="images/kiluat4.png" class="w-100" alt="">
+          </div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <img src="images/kiluat5.png" class="w-100" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-8">
+        <div class="card-body mb-5">
+          <h1 class=" card-title display-5">Càng kỉ luật, Càng tự do</h1>
+          <div class="card-text d-flex">
+            <ul class="sart list-unstyled  ">
+              <li class="d-inline-block"><i class="fas fa-star"></i></li>
+              <li class="d-inline-block"><i class="fas fa-star"></i></li>
+              <li class="d-inline-block"><i class="fas fa-star"></i></li>
+              <li class="d-inline-block"><i class="fas fa-star"></i></li>
+              <li class="d-inline-block"><i class="fas fa-star"></i></li>
+            </ul>
+            <p class="fw-light ">&nbsp; &nbsp; &nbsp;(Xem 2942 đánh giá)</p>
+            <p class="fw-light ">&nbsp; &nbsp; &nbsp;| Đã bán 1000+</p>
+          </div>
+          <div class="card-text d-flex">
+            <div class=" text-danger display-4 "> 83.930 ₫</div>
+            <p class="text-bg-light pt-4">&nbsp; &nbsp;109.000 ₫ &nbsp;</p>
+            <p class="text-danger pt-4 text-center" >&nbsp; <span class="border border-danger p-2 rounded-3">-23%</span> </p>
+          </div>
+        </div>
+        <div class="card-body border border-start-0 border-bottom-0 border-end-0 mt-5 pt-5" >
+        <div class=" fs-1 mt-5 mb-3"> Số lượng</div>
+        <div class="btn-group " role="group" aria-label="Basic mixed styles example">
+          <button type="button" class="btn btn-outline-danger" ng-click="down()"><span class=" text-center text-dark fs-1"  > -</span></button>
+          <input type="text" class=" text-center fs-1" ng-model="quantity" style="width: 70px;">
+          <button type="button" class="btn btn-outline-success  text-dark fs-1 " ng-click="up()">+</button>
+      </div>
+        <div class="row mt-4 ms-2">
+          <button class="btn btn-danger text-center col-3 rounded-3 fs-2" style="margin-top: 10px; height: 50px;">Chọn
+            mua</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+<!-- Sản phẩm khác  -->
+<div class="container mt-5 pt-5">
+  <h2 class="text-capitalize">Sản phẩm tương tự</h2>
+  <div class="row ">
+    <div class="col-sm-12 col-md-4 col-lg-2col-sm-12 col-md-4 col-lg-2" id="sach">
+      <a href="#" style="text-decoration: none;">
+          <div class="card border-0">
+              <img src="images/sptt.png" class="card-img-top" alt="...">
+              <div class="card-body pt-5 ps-0">
+                  <h5 class="card-title fw-bolder mb-3 " style="font-size: 15px;">TƯ DUY NGƯỢC - Nguyễn Anh Dũng</h5>
+                  <div class="card-text d-flex">
+                    <ul class="sart list-unstyled  ">
+                      <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                      <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                      <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                      <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                      <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                    </ul>
+                    <p class="fw-light fs-5">&nbsp; &nbsp; &nbsp;| Đã bán 54</p>
+                  </div>
+                  <p class="card-text text-danger fw-bold mt-3"> 67.000 ₫
+                     <span class="fw-medium " style="border: 1px solid red; border-radius: 3px; font-size: 10px;padding: 0 5px">-32%</span>
+                  </p>
+              </div>
+          </div>
+      </a>
+  </div>
+<div class="col-sm-12 col-md-4 col-lg-2" id="sach" >
+  <a href="#" style="text-decoration: none;">
+      <div class="card border-0">
+          <img src="images/sptt1.png" class="card-img-top" alt="...">
+          <div class="card-body pt-5 ps-0">
+              <h5 class="card-title fw-bolder mb-3" style="font-size: 15px;">Đời Ngắn Đừng Ngủ Dài (Tái Bản)</h5>
+              <div class="card-text d-flex">
+                <ul class="sart list-unstyled  ">
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                </ul>
+                <p class="fw-light fs-5">&nbsp; &nbsp; &nbsp;| Đã bán 1000+</p>
+              </div>
+              <p class="card-text text-danger fw-bold mt-3"> 50.000 ₫
+                 <span class="fw-medium " style="border: 1px solid red; border-radius: 3px; font-size: 10px;padding: 0 5px">-33%</span>
+              </p>
+          </div>
+      </div>
+  </a>
+</div>
+<div class="col-sm-12 col-md-4 col-lg-2" id="sach">
+  <a href="#" style="text-decoration: none;">
+      <div class="card border-0">
+          <img src="images/sptt2.png" class="card-img-top" alt="...">
+          <div class="card-body pt-5 ps-0">
+              <h5 class="card-title fw-bolder mb-3" style="font-size: 15px;">Thiên Nga Đen (Tái Bản 2020)</h5>
+              <div class="card-text d-flex">
+                <ul class="sart list-unstyled  ">
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                </ul>
+                <p class="fw-light fs-5">&nbsp; &nbsp; &nbsp;| Đã bán 141</p>
+              </div>
+              <p class="card-text text-danger fw-bold mt-3 "> 191.000 ₫</p>
+          </div>
+      </div>
+  </a>
+</div>
+<div class="col-sm-12 col-md-4 col-lg-2" id="sach">
+  <a href="#" style="text-decoration: none;">
+      <div class="card border-0">
+          <img src="images/sptt3.png" class="card-img-top" alt="...">
+          <div class="card-body pt-5 ps-0">
+              <h5 class="card-title fw-bolder mb-3" style="font-size: 15px;">Sách: 1 Ngày Bằng 48 Giờ - Sổ tay Quản Lí Thời Gian Hiệu Quả</h5>
+              <div class="card-text d-flex">
+                <ul class="sart list-unstyled  ">
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                </ul>
+                <p class="fw-light fs-5">&nbsp; &nbsp; &nbsp;| Đã bán 601</p>
+              </div>
+              <p class="card-text text-danger fw-bold mt-3"> 44.000 ₫
+                 <span class="fw-medium " style="border: 1px solid red; border-radius: 3px; font-size: 10px;padding: 0 5px">-39%</span>
+              </p>
+          </div>
+      </div>
+  </a>
+</div>
+<div class="col-sm-12 col-md-4 col-lg-2" id="sach">
+  <a href="#" style="text-decoration: none;">
+      <div class="card border-0">
+          <img src="images/sptt4.png" class="card-img-top" alt="...">
+          <div class="card-body pt-5 ps-0">
+              <h5 class="card-title fw-bolder mb-3" style="font-size: 15px;">Hãy Khiến Tương Lai Biết Ơn Vì Hiện Tại Bạn Đã Cố Gắng Hết Mình (Tặng Kèm: 01 Bookmark)</h5>
+              <div class="card-text d-flex">
+                <ul class="sart list-unstyled  ">
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                </ul>
+                <p class="fw-light fs-5">&nbsp; &nbsp; &nbsp;| Đã bán 359</p>
+              </div>
+              <p class="card-text text-danger fw-bold mt-3"> 69.300 ₫
+                 <span class="fw-medium " style="border: 1px solid red; border-radius: 3px; font-size: 10px;padding: 0 5px">-30%</span>
+              </p>
+          </div>
+      </div>
+  </a>
+</div>
+<div class="col-sm-12 col-md-4 col-lg-2" id="sach" >
+  <a href="#" style="text-decoration: none;">
+      <div class="card border-0 p-2">
+          <img src="images/sptt5.png" class="card-img-top" alt="...">
+          <div class="card-body pt-5 ps-0">
+              <h5 class="card-title fw-bolder mb-3" style="font-size: 15px;">Đừng Cố Làm Người Tốt Trong Mắt Tất Cả Mọi Người</h5>
+              <div class="card-text d-flex">
+                <ul class="sart list-unstyled  ">
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                  <li class="d-inline-block fs-5"><i class="fas fa-star"></i></li>
+                </ul>
+                <p class="fw-light fs-5 ">&nbsp; &nbsp; &nbsp;| Đã bán 730</p>
+              </div>
+              <p class="card-text text-danger fw-bold mt-3"> 89.000 ₫
+                 <span class="fw-medium " style="border: 1px solid red; border-radius: 3px; font-size: 10px;padding: 0 5px">-18%</span>
+              </p>
+          </div>
+      </div>
+  </a>
+</div>
+  </div>
+</div>
+<!-- Mô tả sản phẩm -->
+    <div class="container mt-5 pt-5">
+      <h1>Mô Tả Sản Phẩm</h1>
+      <p class="fs-3">KỶ LUẬT vốn là ván cờ bạn phải tự đấu với chính mình. Thắng - bạn sẽ có được “bản năng của người mạnh mẽ nhất”, đó là sự tự kiểm soát bản thân. Thua - bạn mãi sống trong cảm giác tạm bợ, nuối tiếc. Càng dễ dàng dung túng cho những thói quen trì hoãn bao nhiêu, cuộc sống của bạn sẽ đi càng nhanh tới sự mất kiểm soát và thiếu quy hoạch bấy nhiêu.</p>
+      <p class="fs-3">Hãy kiên trì đặt ra yêu cầu cao với bản thân, từ chối sự mê hoặc của thói tùy tiện đồng thời thiết lập cho mình những thói quen tốt trong hành vi thường ngày. Sự nỗ lực sẽ luôn được đền đáp xứng đáng nếu bạn biết cách đầu tư công sức và thời gian. Bởi một ngày nào đó trong tương lai, những gì bạn làm sẽ phản chiếu đầy đủ trên chính con người và cuộc đời của bạn.</p>
+      <p class="fs-3">CÀNG KỶ LUẬT, CÀNG TỰ DO - Mong rằng tại thời điểm kết thúc hành trình với cuốn sách, bạn đã là một phiên bản khác kỷ luật hơn, nhưng tự do hơn.</p>
+      <p class="fs-3">Một vài trích dẫn:</p>
+      <p class="fs-3">“Bạn cần phải biết rằng tình yêu là hoa thêu trên gấm. Có thì tốt, không có cũng chẳng sao, thực sự không đáng để bạn vì nó mà từ bỏ sự nghiệp, từ bỏ cơ hội thăng tiến thậm chí là từ bỏ cả cuộc đời vinh hoa sau này.”</p>
+      <p class="fs-3">“Những người trưởng thành như chúng ta nên nhìn cuộc sống rộng hơn một chút, ghen có thể có, tức giận có thể có. Thế nhưng, có những cảm xúc chỉ nên lướt qua trong lòng, ngày hôm sau ngủ dậy hãy để nó rời đi cùng với đêm đen mới là cách lựa chọn tốt nhất.”</p>
+      <p class="fs-3">“Mỗi người đều có kinh nghiệm sống không giống nhau, yêu cầu không giống nhau. Điều giống nhau là chúng ta đều nên tìm mọi cách trau dồi khả năng của bản thân để sống tốt cuộc đời này.”</p>
+      <p class="fs-3">Giá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, thuế nhập khẩu (đối với đơn hàng giao từ nước ngoài có giá trị trên 1 triệu đồng).....</p>
+      <button class="btn btn-outline-primary fs-2  col-3 offset-4 mt-4 h-25">Xem Thêm Nội Dung</button>
+    </div>
+  <!-- Kết -->
+  <div class="container" style="margin-top: 150px;">
+    <div class="row">
+      <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto ">
+        <h3 class="fw-bolder">Hỗ trợ khách hàng</h3>
+        <p>Hotline:1900-6035</p>
+        <p>(1000 đ/phút, 8-21h kể cả T7, CN)</p>
+        <p>Các câu hỏi thường gặp</p>
+        <p>Gửi yêu cầu hỗ trợ</p>
+        <p>Hướng dẫn đặt hàng</p>
+        <p>Phương thức vận chuyển</p>
+        <p>Chính sách đổi trả</p>
+        <p>Hướng dẫn trả góp</p>
+        <p>Chính sách hàng nhập khẩu</p>
+        <p>Hỗ trợ khách hàng:hotro@tiki.vn</p>
+        <p>Báo lỗi bảo mật:security@tiki.vn</p>
+      </div>
+      <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto ">
+        <h3 class="fw-bolder mb-3">Về Tiki</h3>
+        <p>Giới thiệu Tiki</p>
+        <p>Tuyển dụng</p>
+        <p>Chính sách bảo mật thanh toán</p>
+        <p>Chính sách bảo mật thông tin cá nhân</p>
+        <p>Chính sách giải quyết khiếu nại</p>
+        <p>Điều khoản sử dụng</p>
+        <p>Giới thiệu Tiki Xu</p>
+        <p>Tiếp thị liên kết cùng Tiki</p>
+        <p>Bán hàng doanh nghiệp</p>
+        <p>Điều kiện vận chuyển</p>
+      </div>
+      <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto ">
+        <h3 class="fw-bolder mb-3">Hợp tác và liên kết</h3>
+        <p>Quy chế hoạt động Sàn GDTMĐT</p>
+        <p>Bán hàng cùng Tiki</p>
+        <div class="mt-5">
+          <h3 class="fw-bolder mb-3">Chứng nhận bởi</h3>
+          <div>
+            <img src="images/van.png" class="w-full" alt="">
+            <img src="images/dky.png" class="w-full" alt="">
+          </div>
+        </div>
+      </div>
+      <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto ">
+        <h3 class="fw-bolder mb-3">Phương thức thanh toán</h3>
+        <div class="p-3">
+          <img src="images/Frame.png" alt="">
+          <img src="images/Frame-1.png" alt="">
+          <img src="images/Frame-2.png" alt="">
+          <img src="images/Frame-3.png" alt="">
+          <img src="images/Frame-4.png" alt="">
+        </div>
+        <div class="p-3">
+          <img src="images/Frame-5.png" alt="">
+          <img src="images/Frame-6.png" alt="">
+          <img src="images/Frame-7.png" alt="">
+          <img src="images/Frame-8.png" alt="">
+          <img src="images/Frame-9.png" alt="">
+        </div>
+        <div class="p-3">
+          <img src="images/Frame-10.png" alt="">
+          <img src="images/Frame-11.png" alt="">
+        </div>
+        <div class="mt-5">
+          <h3 class="fw-bolder mb-4">Dịch vụ giao hàng</h3>
+          <div>
+            <img src="images/giaohang.png" class="w-full h-100" alt="">
+
+          </div>
+        </div>
+      </div>
+      <div class=" col-md-4 col-ms-12 col-lg-2 mx-auto">
+        <h3 class="fw-bolder mb-4">r</h3>
+        <div>
+          <img src="images/fb.png" class="w-full" alt="">
+          <img src="images/yt.png" class="w-full ms-2" alt="">
+          <img src="images/zalo.png" class="w-full ms-2" alt="">
+        </div>
+        <div>
+          <h3 class="fw-bolder mb-4">Tải ứng dụng trên điện thoại</h3>
+          <div class="" id="contact">
+            <div class="col-md-5 mx-2 mb-2">
+              <img src="images/qr.png" alt="" />
+            </div>
+            <div class="col-md-7 mx-2">
+              <div class="tren">
+                <img src="images/as.png" alt="" />
+              </div>
+              <div class="duoi mt-2">
+                <img src="images/gp.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  
+  <footer class=" container pt-3" style="border-top: rgb(183, 183, 183) solid 1px;">
+    <p>Trụ sở chính: Tòa nhà Viettel, Số 285, đường Cách Mạng Tháng 8, phường 12, quận 10, Thành phố Hồ Chí Minh</p>
+    <p>Tiki nhận đặt hàng trực tuyến và giao hàng tận nơi, chưa hỗ trợ mua và nhận hàng trực tiếp tại văn phòng hoặc
+      trung tâm xử lý đơn hàng</p>
+    <p>Giấy chứng nhận Đăng ký Kinh doanh số 0309532909 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp lần đầu
+      ngày 06/01/2010 và sửa đổi lần thứ 23 ngày 14/02/2022</p>
+    <p>© 2022 - Bản quyền của Công ty TNHH Ti Ki</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+
+  <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+</body>
+
+</html>
